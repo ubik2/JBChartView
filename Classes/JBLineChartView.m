@@ -1211,6 +1211,7 @@ static UIColor *kJBLineChartViewDefaultDotSelectionColor = nil;
                 {
                     [path moveToPoint:CGPointMake(lineChartPoint.position.x, fmin(self.bounds.size.height - padding, fmax(padding, lineChartPoint.position.y)))];
                     firstXPosition = lineChartPoint.position.x;
+                    lastXPosition = lineChartPoint.position.x;
                 }
                 else
                 {
