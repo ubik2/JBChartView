@@ -1298,9 +1298,13 @@ static UIColor *kJBLineChartViewDefaultDotSelectionColor = nil;
         
         // Continue the path for the fill layer (close and fill)
         UIBezierPath *fillPath = [path copy];
-        
-        [fillPath addLineToPoint:CGPointMake(lastXPosition, self.bounds.size.height - padding)];
-        [fillPath addLineToPoint:CGPointMake(firstXPosition, self.bounds.size.height - padding)];
+
+        if (lastXPosition != 0.0) {
+            [fillPath addLineToPoint:CGPointMake(lastXPosition, self.bounds.size.height - padding)];
+        }
+        if (firstXPosition != 0.0) {
+            [fillPath addLineToPoint:CGPointMake(firstXPosition, self.bounds.size.height - padding)];
+        }
         
         shapeFillLayer.path = fillPath.CGPath;
         shapeFillLayer.frame = self.bounds;
